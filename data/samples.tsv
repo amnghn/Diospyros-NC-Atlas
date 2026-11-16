@@ -1,0 +1,51 @@
+sample_id	species_id	species	is_reference	collection_date	locality	province	latitude	longitude	elevation_m	habitat	soil_type	soil_ph	soil_ni_mg_kg	soil_cr_mg_kg	soil_ca_mg_ratio	soil_organic_matter_pct	dna_conc_ng_ul	dna_a260_280	illumina_depth_x	hifi_available	hifi_depth_x	rna_available	rna_tissue	rna_rin	rna_conc_ng_ul	rna_reads_million
+DVIE_01	DVIE	Diospyros vieillardii	yes	2023-02-07	Mont Koghi	Sud	-22.18028	166.50963	687	Humid evergreen forest	Ultramafic (peridotite)	5.8	5899	13174	0.13	11.4	116.2	1.70	43	yes	33	yes	Root	7.6	140	32.5
+DVIE_02	DVIE	Diospyros vieillardii	no	2023-12-15	Tiébaghi	Nord	-20.44942	164.22757	393	Maquis	Serpentinite	6.6	2526	4329	0.18	7.8	39.0	1.72	39	no		yes	Leaf	8.7	395	54.9
+DVIE_03	DVIE	Diospyros vieillardii	no	2024-04-22	Mont Humboldt	Sud	-21.88673	166.41999	1463	Montane forest	Ultramafic (peridotite)	5.6	5810	13012	0.14	9.4	48.7	1.93	40	no		yes	Fruit	6.9	157	51.9
+DVIE_04	DVIE	Diospyros vieillardii	no	2025-12-11	Tiébaghi	Nord	-20.45460	164.21999	529	Maquis	Serpentinite	7.0	2427	2610	0.12	6.2	88.1	1.92	30	no		yes	Leaf	6.9	399	42.8
+DVIE_05	DVIE	Diospyros vieillardii	no	2024-10-03	Mont Koghi	Sud	-22.17784	166.50953	639	Humid evergreen forest	Ultramafic (peridotite)	6.2	7826	17912	0.05	13.5	100.2	1.83	26	no		no				
+DVIE_06	DVIE	Diospyros vieillardii	no	2023-08-01	Tiébaghi	Nord	-20.44274	164.22601	334	Maquis	Serpentinite	7.5	4167	3785	0.04	12.0	120.2	1.83	24	no		yes	Leaf	7.4	98	58.4
+DVIE_07	DVIE	Diospyros vieillardii	no	2024-05-08	Parc de la Rivière Bleue	Sud	-22.10707	166.66605	190	Humid evergreen forest	Ultramafic (peridotite)	5.6	4916	6038	0.32	14.3	31.0	1.82	35	no		yes	Leaf	7.0	354	39.8
+DVIE_08	DVIE	Diospyros vieillardii	no	2025-11-12	Mont Koghi	Sud	-22.17699	166.50828	461	Humid evergreen forest	Ultramafic (peridotite)	5.8	2384	5316	0.24	11.4	15.9	1.88	19	no		yes	Leaf	6.4	51	36.6
+DVIE_09	DVIE	Diospyros vieillardii	no	2025-10-16	Thio	Sud	-21.63411	166.18957	308	Maquis	Ultramafic (peridotite)	5.7	2582	11466	0.20	9.5	106.1	1.87	38	no		no				
+DVIE_10	DVIE	Diospyros vieillardii	no	2023-04-07	Massif du Koniambo	Nord	-20.99496	164.79918	732	Maquis	Ultramafic (peridotite)	5.7	4776	18117	0.08	14.9	122.0	1.72	38	no		yes	Fruit	8.9	389	57.4
+DCAL_01	DCAL	Diospyros calciphila	yes	2023-10-16	Koumac	Nord	-20.55995	164.31564	60	Dry forest	Limestone	7.6	46	105	6.71	3.1	122.7	1.80	36	yes	35	yes	Fruit	8.1	263	39.7
+DCAL_02	DCAL	Diospyros calciphila	no	2024-03-22	Koumac	Nord	-20.55767	164.30932	38	Dry forest	Limestone	7.5	53	76	7.50	10.6	78.2	1.73	29	no		yes	Leaf	9.0	173	30.5
+DCAL_03	DCAL	Diospyros calciphila	no	2023-11-27	Koumac	Nord	-20.55913	164.31691	46	Dry forest	Limestone	8.3	19	32	7.68	10.9	49.0	1.85	40	no		yes	Leaf	6.9	268	34.2
+DCAL_04	DCAL	Diospyros calciphila	no	2024-01-01	Île des Pins	Sud	-22.62266	167.47409	43	Coastal forest	Limestone	7.6	41	91	19.02	3.8	133.1	1.87	22	no		yes	Fruit	6.3	173	44.3
+DCAL_05	DCAL	Diospyros calciphila	no	2023-06-07	Île des Pins	Sud	-22.61709	167.48267	55	Coastal forest	Limestone	8.2	72	61	20.52	4.5	131.2	1.92	43	no		no				
+DCAL_06	DCAL	Diospyros calciphila	no	2025-06-26	Lifou	Îles Loyauté	-20.94311	167.22484	75	Coastal forest	Limestone	8.2	27	36	22.53	8.1	19.8	1.82	24	no		yes	Flower bud	7.3	335	55.5
+DCAL_07	DCAL	Diospyros calciphila	no	2024-06-21	Maré	Îles Loyauté	-21.51985	167.98287	88	Coastal forest	Limestone	7.8	12	108	11.53	11.3	137.9	1.71	37	no		yes	Flower bud	7.3	323	40.3
+DCAL_08	DCAL	Diospyros calciphila	no	2024-01-17	Koumac	Nord	-20.55319	164.31062	191	Dry forest	Limestone	7.7	40	115	28.02	12.0	97.9	1.73	27	no		yes	Fruit	7.2	187	39.1
+DCAL_09	DCAL	Diospyros calciphila	no	2023-10-19	Koumac	Nord	-20.56318	164.31077	20	Dry forest	Limestone	7.8	25	99	20.17	7.2	70.2	1.87	34	no		yes	Flower bud	8.7	386	50.8
+DCAL_10	DCAL	Diospyros calciphila	no	2023-11-10	Île des Pins	Sud	-22.62441	167.47519	13	Coastal forest	Limestone	7.5	79	81	24.21	9.3	125.8	1.84	40	no		yes	Root	7.4	184	30.2
+DPAN_01	DPAN	Diospyros pancheri	no	2023-12-28	Plaine des Lacs	Sud	-22.27041	166.89615	231	Maquis	Ultramafic (peridotite)	6.6	3664	16665	0.22	5.8	70.0	1.88	25	no		yes	Leaf	7.3	361	27.8
+DPAN_02	DPAN	Diospyros pancheri	no	2024-09-15	Poum	Nord	-20.26135	164.04031	265	Maquis	Serpentinite	6.9	4194	5757	0.02	16.1	87.0	1.82	29	no		yes	Leaf	8.6	347	58.4
+DPAN_03	DPAN	Diospyros pancheri	no	2023-05-14	Pic du Grand Kaori	Sud	-22.28523	166.89322	303	Humid evergreen forest	Ultramafic (peridotite)	6.4	7043	18793	0.39	10.5	128.4	1.85	39	no		yes	Leaf	6.5	194	55.3
+DPAN_04	DPAN	Diospyros pancheri	no	2024-05-25	Poum	Nord	-20.25278	164.04375	91	Maquis	Serpentinite	7.0	4122	1734	0.19	5.6	23.6	1.94	19	no		yes	Leaf	9.2	112	25.7
+DPAN_05	DPAN	Diospyros pancheri	no	2025-05-25	Poum	Nord	-20.26210	164.04669	108	Maquis	Serpentinite	7.3	2073	2900	0.12	16.9	87.0	1.93	30	no		yes	Flower bud	9.2	111	45.7
+DPAN_06	DPAN	Diospyros pancheri	no	2023-10-26	Mont Dore	Sud	-22.27234	166.58552	579	Maquis	Ultramafic (peridotite)	5.6	5885	5190	0.20	9.8	69.2	1.79	44	no		yes	Flower bud	8.5	197	50.7
+DPAN_07	DPAN	Diospyros pancheri	no	2024-12-19	Mont Dore	Sud	-22.26871	166.59063	288	Maquis	Ultramafic (peridotite)	5.9	4705	16257	0.25	12.7	57.0	1.82	28	no		yes	Leaf	7.8	168	34.0
+DPAN_08	DPAN	Diospyros pancheri	no	2023-02-08	Yaté	Sud	-22.14648	166.88982	344	Maquis	Ultramafic (peridotite)	5.8	4857	15678	0.21	2.3	51.8	1.80	25	no		yes	Leaf	8.3	173	44.4
+DPAN_09	DPAN	Diospyros pancheri	yes	2024-05-10	Plaine des Lacs	Sud	-22.27398	166.89393	224	Maquis	Ultramafic (peridotite)	5.9	6457	19263	0.29	5.1	107.3	1.77	36	yes	44	yes	Fruit	7.1	76	31.8
+DPAN_10	DPAN	Diospyros pancheri	no	2025-05-23	Pic du Grand Kaori	Sud	-22.27789	166.89721	325	Humid evergreen forest	Ultramafic (peridotite)	5.6	2074	9265	0.22	7.5	135.7	1.76	45	no		no				
+DUMB_01	DUMB	Diospyros umbrosa	no	2024-10-14	Col d'Amieu	Sud	-21.58311	165.80194	450	Humid evergreen forest	Schist	5.9	47	84	2.25	4.5	36.7	1.72	18	no		no				
+DUMB_02	DUMB	Diospyros umbrosa	no	2023-04-10	Col d'Amieu	Sud	-21.57669	165.80325	632	Humid evergreen forest	Schist	4.9	50	96	2.54	11.4	115.5	1.75	21	no		yes	Fruit	6.9	94	34.3
+DUMB_03	DUMB	Diospyros umbrosa	no	2024-08-04	Mont Panié	Nord	-20.59050	164.76687	912	Montane forest	Schist	5.9	85	144	0.98	2.6	69.0	1.78	26	no		no				
+DUMB_04	DUMB	Diospyros umbrosa	no	2025-10-01	Farino	Sud	-21.65201	165.77276	387	Humid evergreen forest	Volcano-sedimentary	6.4	236	120	3.08	9.1	49.8	1.95	31	no		yes	Root	8.8	389	41.5
+DUMB_05	DUMB	Diospyros umbrosa	no	2024-05-22	Farino	Sud	-21.65288	165.77502	531	Humid evergreen forest	Volcano-sedimentary	5.6	54	146	1.46	14.4	123.1	1.91	18	no		yes	Root	9.0	206	26.9
+DUMB_06	DUMB	Diospyros umbrosa	no	2024-09-05	Poindimié	Nord	-20.95316	165.29901	298	Humid evergreen forest	Schist	4.9	147	168	1.33	4.5	83.9	1.84	20	no		yes	Leaf	9.4	369	41.2
+DUMB_07	DUMB	Diospyros umbrosa	no	2024-07-27	Poindimié	Nord	-20.96028	165.29956	283	Humid evergreen forest	Schist	5.5	70	234	1.92	16.1	123.0	1.77	43	no		yes	Flower bud	7.3	324	34.4
+DUMB_08	DUMB	Diospyros umbrosa	yes	2025-08-28	Mont Panié	Nord	-20.59562	164.77062	853	Montane forest	Schist	5.2	119	119	2.85	15.9	137.6	1.76	30	yes	35	yes	Flower bud	6.3	308	49.7
+DUMB_09	DUMB	Diospyros umbrosa	no	2023-03-17	Hienghène	Nord	-20.71255	164.91731	101	Humid evergreen forest	Schist	5.8	77	150	1.81	13.6	66.2	1.86	22	no		yes	Leaf	7.7	389	36.8
+DUMB_10	DUMB	Diospyros umbrosa	no	2024-06-21	Farino	Sud	-21.65650	165.77415	527	Humid evergreen forest	Volcano-sedimentary	5.6	48	275	4.68	18.0	108.3	1.81	21	no		no				
+DMIN_01	DMIN	Diospyros minimifolia	no	2025-07-20	Pindaï	Nord	-21.33207	164.97496	28	Dry forest	Volcano-sedimentary	5.8	202	216	3.67	16.4	73.2	1.77	35	no		yes	Leaf	6.4	380	59.6
+DMIN_02	DMIN	Diospyros minimifolia	no	2024-08-04	Pindaï	Nord	-21.33920	164.97615	47	Dry forest	Volcano-sedimentary	7.0	110	393	3.63	6.4	85.7	1.87	41	no		yes	Leaf	9.1	308	54.1
+DMIN_03	DMIN	Diospyros minimifolia	yes	2023-11-07	Bourail	Sud	-21.55807	165.52284	204	Dry forest	Volcano-sedimentary	6.7	214	107	1.39	12.0	19.9	1.90	19	yes	39	yes	Root	6.6	367	36.4
+DMIN_04	DMIN	Diospyros minimifolia	no	2024-03-09	Païta	Sud	-22.11338	166.38711	297	Dry forest	Volcano-sedimentary	6.7	232	175	1.46	17.4	32.6	1.94	45	no		yes	Root	8.5	393	58.9
+DMIN_05	DMIN	Diospyros minimifolia	no	2024-06-22	Koumac	Nord	-20.55602	164.30619	117	Dry forest	Limestone	8.2	76	31	10.85	2.4	125.5	1.84	37	no		yes	Leaf	8.3	269	41.2
+DMIN_06	DMIN	Diospyros minimifolia	no	2024-02-04	Bourail	Sud	-21.56424	165.52060	119	Dry forest	Volcano-sedimentary	6.2	211	313	4.78	8.7	107.8	1.74	31	no		yes	Root	6.5	216	39.3
+DMIN_07	DMIN	Diospyros minimifolia	no	2024-02-22	Poya	Nord	-21.34212	165.17643	185	Dry forest	Volcano-sedimentary	6.0	137	125	1.49	15.6	71.8	1.87	38	no		no				
+DMIN_08	DMIN	Diospyros minimifolia	no	2024-04-05	Pindaï	Nord	-21.33041	164.97028	80	Dry forest	Volcano-sedimentary	5.8	88	356	2.31	4.4	127.6	1.70	45	no		yes	Leaf	9.4	234	52.9
+DMIN_09	DMIN	Diospyros minimifolia	no	2025-06-01	Bourail	Sud	-21.56521	165.51284	209	Dry forest	Volcano-sedimentary	6.1	61	82	2.79	7.8	89.2	1.81	25	no		no				
+DMIN_10	DMIN	Diospyros minimifolia	no	2025-09-10	Pindaï	Nord	-21.33567	164.98242	17	Dry forest	Volcano-sedimentary	7.0	259	205	1.43	13.4	70.4	1.92	28	no		no				

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diospyros of New Caledonia — sample atlas</title>
+  <meta name="description" content="Interactive map and data browser for Diospyros samples collected in New Caledonia: DNA, RNA, soil data, sequencing files and genome assemblies.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><em>Diospyros</em> of New Caledonia</h1>
+      <p>Sample, soil and genomic data atlas</p>
+    </div>
+    <nav>
+      <a href="#explorer">Explorer</a>
+      <a href="#species">Species</a>
+      <a href="#about">About</a>
+      <a id="repo-link" href="#" hidden>GitHub</a>
+    </nav>
+  </header>
+
+  <p class="notice" id="notice">
+    <strong>Simulated data.</strong> Every sample, coordinate, measurement, file path and MD5 sum on this page is
+    made up for demonstration. Species names are real; nothing else is.
+  </p>
+
+  <main>
+    <section id="explorer" class="explorer">
+      <aside class="filters" aria-label="Filters">
+        <div class="filters-head">
+          <h2>Filters</h2>
+          <button type="button" id="reset-filters" class="link-btn">Reset</button>
+        </div>
+        <input type="search" id="search" placeholder="Search sample, locality, habitat…" aria-label="Search samples">
+        <div id="facets"></div>
+        <fieldset class="facet">
+          <legend>Data available</legend>
+          <label><input type="checkbox" data-flag="rna"> Has RNA-seq</label>
+          <label><input type="checkbox" data-flag="hifi"> Has HiFi reads</label>
+          <label><input type="checkbox" data-flag="ref"> Reference genome samples only</label>
+        </fieldset>
+
+        <div class="export">
+          <h2>Export</h2>
+          <p class="hint">Exports follow the current filters. The sample table is exported with the columns shown.</p>
+          <div class="export-row">
+            <span>Samples</span>
+            <button type="button" data-export="samples" data-format="csv">CSV</button>
+            <button type="button" data-export="samples" data-format="tsv">TSV</button>
+          </div>
+          <div class="export-row">
+            <span>FASTQ paths + MD5</span>
+            <button type="button" data-export="files" data-format="csv">CSV</button>
+            <button type="button" data-export="files" data-format="tsv">TSV</button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <div class="toolbar">
+          <p id="summary" class="summary" aria-live="polite"></p>
+          <label class="color-by">Colour by
+            <select id="color-by">
+              <option value="species_id">Species</option>
+              <option value="soil_type">Soil type</option>
+            </select>
+          </label>
+          <button type="button" id="zoom-results">Zoom to results</button>
+        </div>
+        <div id="map" role="application" aria-label="Map of samples in New Caledonia"></div>
+
+        <div class="table-head">
+          <h2>Samples</h2>
+          <div id="column-toggles" class="column-toggles" aria-label="Show or hide column groups"></div>
+        </div>
+        <div class="table-wrap">
+          <table id="sample-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <p id="empty" class="empty" hidden>No samples match these filters.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="species" class="species-section">
+      <h2>Species and genome assemblies</h2>
+      <p class="section-intro">One genome assembly per species. The sample the assembly was built from is the
+        reference sample, shown as a star on the map.</p>
+      <div id="species-cards" class="species-cards"></div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>This site maps the <em>Diospyros</em> (Ebenaceae) samples collected in New Caledonia for a PhD project,
+        with the DNA, RNA and soil data recorded for each sample, the location and MD5 sum of every Illumina and
+        PacBio HiFi FASTQ file, and the genome assembly of each species.</p>
+      <p>The site is a static page: all data live in three tab-separated files in the <code>data/</code> folder,
+        and the code is open source.</p>
+    </section>
+  </main>
+
+  <aside id="detail" class="detail" aria-label="Sample details" hidden>
+    <button type="button" id="detail-close" class="detail-close" aria-label="Close details">×</button>
+    <div id="detail-body"></div>
+  </aside>
+
+  <footer class="site-footer">
+    <p>Map data © OpenStreetMap contributors. Code released under the MIT licence.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
