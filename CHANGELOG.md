@@ -93,3 +93,12 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 #### Removed
 - The short About section at the bottom of the map page. Its content moved to `about.html`.
 - **Files:** `about.html`, `index.html`, `js/app.js`, `js/site.js`, `js/version.js`, `css/style.css`, `CHANGELOG.md`.
+
+### 2026-11-22T18:25+01:00 | Beta badge, page metadata, preview image and favicon
+
+#### Added
+- A small permanent "Beta" badge next to the site title on every page.
+- Page metadata: a canonical address, Open Graph tags (title, description, address, preview image with its size and a text alternative, locale) and a Twitter card on the map page and the About page. The descriptions say that the site is a beta version with simulated data.
+- `assets/og-image.png` (1200 × 630 px, 190 kB): the preview image for link previews, a screenshot of the map page made with headless Firefox. For this image only, the map was made shorter so that the map attribution (© OpenStreetMap contributors) is inside the frame.
+- `favicon.svg`: a simple persimmon (fruit with calyx) in the site's green.
+- **Files:** `index.html`, `about.html`, `css/style.css`, `favicon.svg`, `assets/og-image.png`, `CHANGELOG.md`.
