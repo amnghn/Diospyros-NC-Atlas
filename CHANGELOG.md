@@ -150,3 +150,12 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 #### Added
 - `docs/screenshot.png` (1440 × 900 px, 273 kB): the map page, made with `scripts/browser_check.mjs --screenshot`.
 - **Files:** `README.md`, `docs/screenshot.png`, `CHANGELOG.md`.
+
+### 2026-11-22T18:34+01:00 | Stop point 2: build finished and checked
+
+#### Changed
+- No code changes in this step. Results of the final checks on LiSC, on a clean working tree:
+  - `scripts/check_data.py`: passed (5 species, 50 samples, 185 files). `scripts/check_site.py`: passed (3 pages, version 0.1.0-beta). Reproducibility guard: passed. `cffconvert --validate`: valid. `actionlint`: no problems.
+  - `scripts/browser_check.mjs`: all checks passed at 1440 px (100), 375 px (100) and 1024 px (95), with no console errors and no horizontal scrolling, including the 404 page at a missing address in a sub-folder. The exported CSV and TSV files were also read back with Python and agree with `data/samples.tsv` and `data/files.tsv`.
+  - History: all commits have the author and committer "Amin Ghane <84973642+amnghn@users.noreply.github.com>"; no tracked file contains secrets; the only plain email address and server path are in `docs/PROMPT.md`, which is the prompt exactly as given.
+- **Files:** `CHANGELOG.md`.
