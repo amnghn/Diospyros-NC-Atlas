@@ -102,3 +102,11 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 - `assets/og-image.png` (1200 × 630 px, 190 kB): the preview image for link previews, a screenshot of the map page made with headless Firefox. For this image only, the map was made shorter so that the map attribution (© OpenStreetMap contributors) is inside the frame.
 - `favicon.svg`: a simple persimmon (fruit with calyx) in the site's green.
 - **Files:** `index.html`, `about.html`, `css/style.css`, `favicon.svg`, `assets/og-image.png`, `CHANGELOG.md`.
+
+### 2026-11-22T18:27+01:00 | 404 page
+
+#### Added
+- `404.html`: a simple "Page not found" page with the same header and footer as the other pages and a link back to the map. It asks search engines not to index it.
+- GitHub Pages shows this page for every missing address, also in sub-folders. The page therefore sets `<base href="/Diospyros-NC-Atlas/">`, so that its style sheet, scripts and links work at any depth. This is the only place where the repository name is written into a page; it must be changed if the repository is renamed.
+- Checked with a local test server that answers missing addresses like GitHub Pages: `/Diospyros-NC-Atlas/no/such/folder/page` shows the styled 404 page with working links, at 1440 px and 375 px.
+- **Files:** `404.html`, `CHANGELOG.md`.
