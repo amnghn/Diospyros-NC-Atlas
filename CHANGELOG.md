@@ -36,3 +36,9 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 - Further checks: `js/app.js` uses no sample column that the script does not know; yes/no columns contain only `yes` or `no`; `hifi_available` and `rna_available` agree with `files.tsv`; species names and IDs agree between the tables; colours are `#rrggbb` values (they are written into the page's HTML).
 - The check passes on the current data (5 species, 50 samples, 185 files) with Python 3.9 and 3.12. Thirteen deliberately broken copies of the data, one for each rule, all fail with the expected message.
 - **Files:** `scripts/check_data.py`, `CHANGELOG.md`.
+
+### 2026-11-22T18:10+01:00 | Description of the simulated data
+
+#### Added
+- `data/README.md`: a clear statement that all data are simulated; the rules for what may be committed in `data/` and `assets/photos/`; how `scripts/simulate_data.py` generates the data; the file format; and the meaning and unit of every column of `species.tsv`, `samples.tsv` and `files.tsv`.
+- **Files:** `data/README.md`, `CHANGELOG.md`.
