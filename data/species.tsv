@@ -1,6 +1,6 @@
 species_id	species	color	reference_sample_id	assembly_name	assembly_path	assembly_md5	genome_size_mb	n_contigs	contig_n50_mb	busco_complete_pct	photo	photo_credit
-DVIE	Diospyros vieillardii	#1b7f5c	DVIE_01	DVIE_v1.0	/data/diospyros/assemblies/DVIE/DVIE_v1.0.fasta.gz	7d24983169aa9780185c5430407b3538	1055	240	13.6	96.0	assets/photos/DVIE.svg	Placeholder illustration
-DCAL	Diospyros calciphila	#3a6ea5	DCAL_01	DCAL_v1.0	/data/diospyros/assemblies/DCAL/DCAL_v1.0.fasta.gz	19bfaec5eb2899e50633bd15b5d94435	1248	615	15.4	98.6	assets/photos/DCAL.svg	Placeholder illustration
-DPAN	Diospyros pancheri	#d1603d	DPAN_09	DPAN_v1.0	/data/diospyros/assemblies/DPAN/DPAN_v1.0.fasta.gz	c5829b676e827856d2d09cd50a2708ea	1055	683	10.5	98.0	assets/photos/DPAN.svg	Placeholder illustration
-DUMB	Diospyros umbrosa	#8e4a9e	DUMB_08	DUMB_v1.0	/data/diospyros/assemblies/DUMB/DUMB_v1.0.fasta.gz	c98ab7c2ec34b2d067c49910def2d8e0	901	634	13.7	97.0	assets/photos/DUMB.svg	Placeholder illustration
-DMIN	Diospyros minimifolia	#c9a227	DMIN_03	DMIN_v1.0	/data/diospyros/assemblies/DMIN/DMIN_v1.0.fasta.gz	7760747c8d70dacda758636621737d25	990	819	29.5	97.8	assets/photos/DMIN.svg	Placeholder illustration
+DVIE	Diospyros vieillardii	#009E73	DVIE_01	DVIE_v1.0	/data/diospyros/assemblies/DVIE/DVIE_v1.0.fasta.gz	7d24983169aa9780185c5430407b3538	1055	240	13.6	96.0	assets/photos/DVIE.svg	Placeholder illustration
+DCAL	Diospyros calciphila	#0072B2	DCAL_01	DCAL_v1.0	/data/diospyros/assemblies/DCAL/DCAL_v1.0.fasta.gz	19bfaec5eb2899e50633bd15b5d94435	1248	615	15.4	98.6	assets/photos/DCAL.svg	Placeholder illustration
+DPAN	Diospyros pancheri	#D55E00	DPAN_09	DPAN_v1.0	/data/diospyros/assemblies/DPAN/DPAN_v1.0.fasta.gz	c5829b676e827856d2d09cd50a2708ea	1055	683	10.5	98.0	assets/photos/DPAN.svg	Placeholder illustration
+DUMB	Diospyros umbrosa	#CC79A7	DUMB_08	DUMB_v1.0	/data/diospyros/assemblies/DUMB/DUMB_v1.0.fasta.gz	c98ab7c2ec34b2d067c49910def2d8e0	901	634	13.7	97.0	assets/photos/DUMB.svg	Placeholder illustration
+DMIN	Diospyros minimifolia	#E69F00	DMIN_03	DMIN_v1.0	/data/diospyros/assemblies/DMIN/DMIN_v1.0.fasta.gz	7760747c8d70dacda758636621737d25	990	819	29.5	97.8	assets/photos/DMIN.svg	Placeholder illustration

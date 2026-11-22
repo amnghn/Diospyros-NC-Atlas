@@ -49,3 +49,15 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 - `scripts/check_reproducible.sh` proves that the published data are exactly the simulated data. It refuses to run if `data/` or `assets/photos/` have uncommitted changes, so local files are never overwritten. It then re-runs `scripts/simulate_data.py` and fails if `git diff --exit-code -- data assets/photos` shows a difference, if the simulator writes files that are not committed, if a tracked file in these folders is not on its allowlist, or if any tracked file is larger than 5 MB. It uses `python3.12` when available (the version pinned in the workflow).
 - The simulator gives byte-identical output on Python 3.9, 3.10, 3.11, 3.12, 3.13 and 3.14 (tested on LiSC). The guard passes on the current repository. Seven deliberately broken copies (uncommitted edit, committed edit, extra committed file, extra file from the simulator, changed seed, file larger than 5 MB, untracked photo) all fail with the expected message.
 - **Files:** `scripts/check_reproducible.sh`, `CHANGELOG.md`.
+
+### 2026-11-22T18:12+01:00 | Colourblind-safe colours for species and soil types
+
+#### Fixed
+- The old colours were not safe for colour-blind readers. Under simulated deuteranopia, *D. calciphila* (blue) and *D. umbrosa* (purple) were almost identical (smallest colour difference ΔE₀₀ = 2.1), and so were Limestone and Schist (ΔE₀₀ = 4.8).
+
+#### Changed
+- Species colours now come from the Okabe & Ito palette, close to the old hues: *D. vieillardii* #009E73 (bluish green), *D. calciphila* #0072B2 (blue), *D. pancheri* #D55E00 (vermillion), *D. umbrosa* #CC79A7 (reddish purple), *D. minimifolia* #E69F00 (orange).
+- Soil colours now come from Paul Tol's "muted" palette: Ultramafic (peridotite) #CC6677, Serpentinite #117733, Limestone #88CCEE, Schist #332288, Volcano-sedimentary #DDCC77. Colours for values without a fixed colour use the Okabe & Ito palette.
+- Check: the smallest CIEDE2000 difference between two colours, for normal vision and for simulated protanopia, deuteranopia and tritanopia (Machado et al. 2009, full severity). Species: 22.2, 12.2, 12.5 and 10.9 (was 26.9, 6.5, 2.1 and 7.2). Soil types: 39.2, 19.9, 17.6 and 24.2 (was 17.9, 7.5, 4.8 and 7.8).
+- The simulated data were regenerated: only the `color` column of `data/species.tsv` and the colours of the placeholder drawings changed. `data/samples.tsv` and `data/files.tsv` are unchanged.
+- **Files:** `scripts/simulate_data.py`, `js/app.js`, `data/species.tsv`, `assets/photos/*.svg`, `CHANGELOG.md`.

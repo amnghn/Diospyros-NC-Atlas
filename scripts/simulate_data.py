@@ -47,16 +47,18 @@ LOCALITIES = {
     "Maré": ("Îles Loyauté", -21.520, 167.980, (20, 100), "Limestone", "Coastal forest"),
 }
 
+# Species colours: Okabe & Ito colourblind-safe palette (bluish green, blue,
+# vermillion, reddish purple, orange).
 SPECIES = [
-    {"species_id": "DVIE", "species": "Diospyros vieillardii", "color": "#1b7f5c",
+    {"species_id": "DVIE", "species": "Diospyros vieillardii", "color": "#009E73",
      "localities": ["Mont Koghi", "Parc de la Rivière Bleue", "Mont Humboldt", "Thio", "Massif du Koniambo", "Tiébaghi"]},
-    {"species_id": "DCAL", "species": "Diospyros calciphila", "color": "#3a6ea5",
+    {"species_id": "DCAL", "species": "Diospyros calciphila", "color": "#0072B2",
      "localities": ["Lifou", "Maré", "Île des Pins", "Koumac"]},
-    {"species_id": "DPAN", "species": "Diospyros pancheri", "color": "#d1603d",
+    {"species_id": "DPAN", "species": "Diospyros pancheri", "color": "#D55E00",
      "localities": ["Plaine des Lacs", "Pic du Grand Kaori", "Yaté", "Mont Dore", "Poum"]},
-    {"species_id": "DUMB", "species": "Diospyros umbrosa", "color": "#8e4a9e",
+    {"species_id": "DUMB", "species": "Diospyros umbrosa", "color": "#CC79A7",
      "localities": ["Col d'Amieu", "Farino", "Mont Panié", "Hienghène", "Poindimié"]},
-    {"species_id": "DMIN", "species": "Diospyros minimifolia", "color": "#c9a227",
+    {"species_id": "DMIN", "species": "Diospyros minimifolia", "color": "#E69F00",
      "localities": ["Pindaï", "Poya", "Bourail", "Païta", "Koumac"]},
 ]
 

@@ -45,14 +45,16 @@ const FACETS = [
   { key: 'province', label: 'Province' },
 ];
 
+// Soil colours: Paul Tol's colourblind-safe "muted" palette.
 const SOIL_COLORS = {
-  'Ultramafic (peridotite)': '#a63d2f',
-  'Serpentinite': '#2f8f83',
-  'Limestone': '#4a78c2',
-  'Schist': '#7b5ea7',
-  'Volcano-sedimentary': '#c58a1e',
+  'Ultramafic (peridotite)': '#CC6677',
+  'Serpentinite': '#117733',
+  'Limestone': '#88CCEE',
+  'Schist': '#332288',
+  'Volcano-sedimentary': '#DDCC77',
 };
-const FALLBACK_COLORS = ['#1b7f5c', '#d1603d', '#3a6ea5', '#8e4a9e', '#c9a227', '#5c6b73', '#b0457a', '#6a8f2a'];
+// Colours for values without a fixed colour: the Okabe & Ito colourblind-safe palette.
+const FALLBACK_COLORS = ['#E69F00', '#56B4E9', '#009E73', '#F0E442', '#0072B2', '#D55E00', '#CC79A7', '#000000'];
 
 /* ---------- State ---------- */
 

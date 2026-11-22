@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Placeholder for Diospyros vieillardii">
-  <rect width="400" height="300" fill="#1b7f5c" opacity="0.16"/>
-  <rect width="400" height="300" fill="none" stroke="#1b7f5c" stroke-width="2" opacity="0.5"/>
+  <rect width="400" height="300" fill="#009E73" opacity="0.16"/>
+  <rect width="400" height="300" fill="none" stroke="#009E73" stroke-width="2" opacity="0.5"/>
   <g transform="translate(200 132)">
-    <path d="M-120 34 C-70 -62 40 -72 96 -30 C40 30 -60 56 -120 34Z" fill="#1b7f5c" opacity="0.85"/>
+    <path d="M-120 34 C-70 -62 40 -72 96 -30 C40 30 -60 56 -120 34Z" fill="#009E73" opacity="0.85"/>
     <path d="M-120 34 C-50 4 30 -18 96 -30" fill="none" stroke="#fff" stroke-width="3" opacity="0.7"/>
-    <circle cx="70" cy="44" r="34" fill="#1b7f5c"/>
+    <circle cx="70" cy="44" r="34" fill="#009E73"/>
     <path d="M52 16 l18 -10 l18 10 l-8 8 h-20z" fill="#fff" opacity="0.55"/>
   </g>
   <text x="200" y="262" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="20" fill="#222">Diospyros vieillardii</text>
