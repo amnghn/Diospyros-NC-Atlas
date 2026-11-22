@@ -110,3 +110,10 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 - GitHub Pages shows this page for every missing address, also in sub-folders. The page therefore sets `<base href="/Diospyros-NC-Atlas/">`, so that its style sheet, scripts and links work at any depth. This is the only place where the repository name is written into a page; it must be changed if the repository is renamed.
 - Checked with a local test server that answers missing addresses like GitHub Pages: `/Diospyros-NC-Atlas/no/such/folder/page` shows the styled 404 page with working links, at 1440 px and 375 px.
 - **Files:** `404.html`, `CHANGELOG.md`.
+
+### 2026-11-22T18:27+01:00 | Citation file
+
+#### Added
+- `CITATION.cff` (Citation File Format 1.2.0), from which GitHub shows a "Cite this repository" button: title "Diospyros of New Caledonia: sample atlas", version 0.1.0-beta, release date, author Amin Ghane (University of Vienna, ORCID 0000-0002-1035-8650), repository and site addresses, MIT licence, abstract and keywords.
+- Validated with `cffconvert --validate` (cffconvert 2.0.0, installed in the local environment `.venv-cffconvert/`, which git ignores): "Citation metadata are valid according to schema version 1.2.0". A copy with a malformed ORCID fails, as expected.
+- **Files:** `CITATION.cff`, `CHANGELOG.md`.

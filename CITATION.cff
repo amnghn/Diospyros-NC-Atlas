@@ -1,0 +1,30 @@
+# Citation metadata in the Citation File Format (https://citation-file-format.github.io/).
+# GitHub shows a "Cite this repository" button from this file.
+# Update the version and date together with js/version.js and CHANGELOG.md.
+cff-version: 1.2.0
+message: "If you refer to this site or its code, please cite it as below."
+title: "Diospyros of New Caledonia: sample atlas"
+version: "0.1.0-beta"
+date-released: "2026-11-22"
+type: software
+authors:
+  - family-names: Ghane
+    given-names: Amin
+    affiliation: "University of Vienna"
+    orcid: "https://orcid.org/0000-0002-1035-8650"
+repository-code: "https://github.com/amnghn/Diospyros-NC-Atlas"
+url: "https://amnghn.github.io/Diospyros-NC-Atlas/"
+license: MIT
+abstract: >-
+  An interactive map and data browser for Diospyros (Ebenaceae) samples in New
+  Caledonia, with GPS coordinates, DNA, RNA and soil data, sequencing file paths
+  and MD5 sums, genome assemblies with their reference samples, and species
+  photos. Beta version: all data in this version are simulated.
+keywords:
+  - Diospyros
+  - Ebenaceae
+  - New Caledonia
+  - biodiversity
+  - genomics
+  - interactive map
+  - Leaflet
