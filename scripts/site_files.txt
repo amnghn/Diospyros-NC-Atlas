@@ -1,0 +1,12 @@
+# Files and folders published on GitHub Pages. The workflow (.github/workflows/pages.yml)
+# copies exactly these paths into _site/, and scripts/check_site.py checks that the pages
+# only use files from this list. scripts/, docs/ and .github/ are never published.
+index.html
+about.html
+404.html
+favicon.svg
+LICENSE
+css
+js
+data
+assets

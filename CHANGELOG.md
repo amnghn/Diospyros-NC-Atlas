@@ -117,3 +117,11 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 - `CITATION.cff` (Citation File Format 1.2.0), from which GitHub shows a "Cite this repository" button: title "Diospyros of New Caledonia: sample atlas", version 0.1.0-beta, release date, author Amin Ghane (University of Vienna, ORCID 0000-0002-1035-8650), repository and site addresses, MIT licence, abstract and keywords.
 - Validated with `cffconvert --validate` (cffconvert 2.0.0, installed in the local environment `.venv-cffconvert/`, which git ignores): "Citation metadata are valid according to schema version 1.2.0". A copy with a malformed ORCID fails, as expected.
 - **Files:** `CITATION.cff`, `CHANGELOG.md`.
+
+### 2026-11-22T18:29+01:00 | Site checks and the list of published files
+
+#### Added
+- `scripts/site_files.txt`: the files and folders that are published on GitHub Pages (`index.html`, `about.html`, `404.html`, `favicon.svg`, `LICENSE`, `css/`, `js/`, `data/`, `assets/`). The workflow copies exactly these paths.
+- `scripts/check_site.py` (standard library only) fails with a clear message if: a page has no title, no description or a language other than en-GB; a page uses an absolute local path, a missing file or a file that is not published (the only exception is `<base>` in `404.html`); the Open Graph image or the canonical address points to a missing file; a script or style sheet from another server has no integrity hash or no `crossorigin`; a plain email address appears in a page; a page lacks the Beta badge, the footer version, the link to the About page or the shared scripts; the version differs between `js/version.js`, `CITATION.cff` and `CHANGELOG.md`; or `scripts/`, `docs/` or `.github/` would be published.
+- The check passes with Python 3.9 and 3.12. Eleven deliberately broken copies, one for each rule, all fail with the expected message.
+- **Files:** `scripts/check_site.py`, `scripts/site_files.txt`, `CHANGELOG.md`.
