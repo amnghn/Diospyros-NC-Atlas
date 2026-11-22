@@ -42,3 +42,10 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 #### Added
 - `data/README.md`: a clear statement that all data are simulated; the rules for what may be committed in `data/` and `assets/photos/`; how `scripts/simulate_data.py` generates the data; the file format; and the meaning and unit of every column of `species.tsv`, `samples.tsv` and `files.tsv`.
 - **Files:** `data/README.md`, `CHANGELOG.md`.
+
+### 2026-11-22T18:11+01:00 | Reproducibility guard
+
+#### Added
+- `scripts/check_reproducible.sh` proves that the published data are exactly the simulated data. It refuses to run if `data/` or `assets/photos/` have uncommitted changes, so local files are never overwritten. It then re-runs `scripts/simulate_data.py` and fails if `git diff --exit-code -- data assets/photos` shows a difference, if the simulator writes files that are not committed, if a tracked file in these folders is not on its allowlist, or if any tracked file is larger than 5 MB. It uses `python3.12` when available (the version pinned in the workflow).
+- The simulator gives byte-identical output on Python 3.9, 3.10, 3.11, 3.12, 3.13 and 3.14 (tested on LiSC). The guard passes on the current repository. Seven deliberately broken copies (uncommitted edit, committed edit, extra committed file, extra file from the simulator, changed seed, file larger than 5 MB, untracked photo) all fail with the expected message.
+- **Files:** `scripts/check_reproducible.sh`, `CHANGELOG.md`.
