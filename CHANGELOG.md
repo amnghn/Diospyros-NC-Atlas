@@ -28,3 +28,11 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 - `LICENSE`: the copyright holder is now Amin Ghane (was "Diospyros atlas contributors"). The MIT licence text is unchanged.
 - The author and committer of the first commit are now the GitHub no-reply address of the author, so that no private email address is published with the history. Dates, message and files are unchanged (new hash `60d1b40`, was `7dac168`).
 - **Files:** `docs/PROMPT.md`, `CHANGELOG.md`, `.gitignore`, `LICENSE`.
+
+### 2026-11-22T18:09+01:00 | Data checks
+
+#### Added
+- `scripts/check_data.py` (standard library only, Python 3.9 or newer) fails with a clear message, with file and line, if: a column that `js/app.js` needs is missing; a row has the wrong number of cells, or a value contains a tab; a `sample_id` or `species_id` is not unique; a sample or file points to an unknown species or sample; a species does not have exactly one reference sample, or `reference_sample_id` does not match the sample marked `is_reference = yes`; a reference sample has no PacBio HiFi file; an MD5 value is not 32 lowercase hexadecimal characters; coordinates fall outside 23.0–19.5° S, 163.5–168.5° E; or a photo path does not exist.
+- Further checks: `js/app.js` uses no sample column that the script does not know; yes/no columns contain only `yes` or `no`; `hifi_available` and `rna_available` agree with `files.tsv`; species names and IDs agree between the tables; colours are `#rrggbb` values (they are written into the page's HTML).
+- The check passes on the current data (5 species, 50 samples, 185 files) with Python 3.9 and 3.12. Thirteen deliberately broken copies of the data, one for each rule, all fail with the expected message.
+- **Files:** `scripts/check_data.py`, `CHANGELOG.md`.
