@@ -40,9 +40,9 @@ const LABELS = {
 
 // Facets shown as checkbox lists in the filter panel.
 const FACETS = [
-  { key: 'species_id', label: 'Species' },
-  { key: 'soil_type', label: 'Soil type' },
-  { key: 'province', label: 'Province' },
+  { key: 'species_id', label: 'Species', plural: 'species' },
+  { key: 'soil_type', label: 'Soil type', plural: 'soil types' },
+  { key: 'province', label: 'Province', plural: 'provinces' },
 ];
 
 // Soil colours: Paul Tol's colourblind-safe "muted" palette.
@@ -73,6 +73,7 @@ const state = {
 
 let map, markerLayer, legendEl;
 const fallbackAssigned = new Map();
+let returnFocus = null;   // where keyboard focus goes back to when the detail drawer closes
 
 /* ---------- Helpers ---------- */
 
@@ -167,7 +168,7 @@ function filteredSamples() {
 /* ---------- Filter panel ---------- */
 
 function renderFacets() {
-  $('#facets').innerHTML = FACETS.map(({ key, label }) => {
+  $('#facets').innerHTML = FACETS.map(({ key, label, plural }) => {
     const options = uniqueValues(key).map(value => {
       const count = state.samples.filter(s => s[key] === value).length;
       const color = colorFor(key, value);
@@ -175,8 +176,8 @@ function renderFacets() {
       const text = key === 'species_id' ? `<span class="sci">${esc(facetLabel(key, value))}</span>` : esc(value);
       return `<label><input type="checkbox" data-facet="${key}" value="${esc(value)}" checked>${swatch}${text}<span class="count">${count}</span></label>`;
     }).join('');
-    return `<fieldset class="facet"><legend>${label}
-      <span class="facet-actions"><button type="button" data-facet-all="${key}">all</button><button type="button" data-facet-none="${key}">none</button></span>
+    return `<fieldset class="facet" aria-labelledby="facet-${key}-label"><legend><span id="facet-${key}-label">${label}</span>
+      <span class="facet-actions"><button type="button" data-facet-all="${key}" aria-label="Select all ${plural}">all</button><button type="button" data-facet-none="${key}" aria-label="Clear ${plural}">none</button></span>
       </legend>${options}</fieldset>`;
   }).join('');
 }
@@ -223,7 +224,7 @@ function initMap() {
 }
 
 function markerIcon(sample) {
-  const color = colorFor(state.colorBy, sample[state.colorBy]);
+  const color = esc(colorFor(state.colorBy, sample[state.colorBy]));
   const isRef = sample.is_reference === 'yes';
   const size = isRef ? 28 : 18;
   const shape = isRef
@@ -247,7 +248,7 @@ function renderMap(rows) {
       zIndexOffset: (isRef ? 1000 : 0) + (s.sample_id === state.selected ? 2000 : 0),
     })
       .bindTooltip(`<strong>${esc(s.sample_id)}</strong>${isRef ? ' ★ reference' : ''}<br><em>${esc(s.species)}</em><br>${esc(s.locality)} · ${esc(s.soil_type)}`, { direction: 'top', offset: [0, -8] })
-      .on('click', () => selectSample(s.sample_id, false))
+      .on('click', () => selectSample(s.sample_id, false, { marker: s.sample_id }))
       .addTo(markerLayer);
   }
 }
@@ -290,11 +291,13 @@ function cellHTML(sample, column) {
 function renderTable(rows) {
   const columns = visibleColumns();
   $('#sample-table thead').innerHTML = '<tr>' + columns.map(c => {
-    const arrow = state.sort.column === c ? `<span class="arrow">${state.sort.dir === 1 ? '▲' : '▼'}</span>` : '';
-    return `<th data-column="${c}" scope="col">${esc(LABELS[c] || c)}${arrow}</th>`;
+    const sorted = state.sort.column === c;
+    const arrow = sorted ? `<span class="arrow" aria-hidden="true">${state.sort.dir === 1 ? '▲' : '▼'}</span>` : '';
+    const ariaSort = sorted ? ` aria-sort="${state.sort.dir === 1 ? 'ascending' : 'descending'}"` : '';
+    return `<th data-column="${c}" scope="col"${ariaSort}><button type="button" class="sort-btn" data-sort="${c}">${esc(LABELS[c] || c)}${arrow}</button></th>`;
   }).join('') + '</tr>';
   $('#sample-table tbody').innerHTML = rows.map(s =>
-    `<tr data-id="${esc(s.sample_id)}"${s.sample_id === state.selected ? ' class="selected"' : ''}>${columns.map(c => cellHTML(s, c)).join('')}</tr>`
+    `<tr data-id="${esc(s.sample_id)}" tabindex="0"${s.sample_id === state.selected ? ' class="selected"' : ''}>${columns.map(c => cellHTML(s, c)).join('')}</tr>`
   ).join('');
   $('#empty').hidden = rows.length > 0;
 }
@@ -329,7 +332,7 @@ function renderDetail() {
     </div>`).join('');
 
   $('#detail-body').innerHTML = `
-    <h3>${esc(s.sample_id)} ${isRef ? '<span class="badge">★ reference</span>' : ''}</h3>
+    <h3 tabindex="-1">${esc(s.sample_id)} ${isRef ? '<span class="badge">★ reference</span>' : ''}</h3>
     <p class="sub"><em>${esc(s.species)}</em></p>
     ${sp.photo ? `<img src="${esc(sp.photo)}" alt="${esc(s.species)}">` : ''}
     <h4>Location</h4>
@@ -356,12 +359,29 @@ function renderDetail() {
   panel.hidden = false;
 }
 
-function selectSample(id, flyTo) {
+// opener: where focus returns when the drawer closes ({ row: id }, { marker: id } or
+// { element }). Leave it undefined for links inside the drawer, to keep the first opener.
+function selectSample(id, flyTo, opener) {
+  if (opener !== undefined) returnFocus = opener;
   state.selected = id;
   const s = state.samples.find(x => x.sample_id === id);
   if (s && !passes(s)) resetFilters();   // make sure the selected sample is visible
   render();
+  $('#detail h3')?.focus();
   if (s && flyTo) map.flyTo([Number(s.latitude), Number(s.longitude)], Math.max(map.getZoom(), 11), { duration: 0.6 });
+}
+
+function closeDetail() {
+  state.selected = null;
+  render();
+  const target = returnFocus;
+  returnFocus = null;
+  if (!target) return;
+  let el = null;
+  if (target.row) el = document.querySelector(`#sample-table tbody tr[data-id="${CSS.escape(target.row)}"]`);
+  else if (target.marker) el = document.querySelector(`.leaflet-marker-icon[title="${CSS.escape(target.marker)}"]`);
+  else if (target.element && document.contains(target.element)) el = target.element;
+  el?.focus();
 }
 
 /* ---------- Species cards ---------- */
@@ -446,7 +466,8 @@ function bindEvents() {
     } else if (d.export) {
       exportData(d.export, d.format);
     } else if (d.goto) {
-      selectSample(d.goto, true);
+      // A link inside the drawer keeps the drawer's first opener as the focus target.
+      selectSample(d.goto, true, t.closest('#detail') ? undefined : { element: t });
       $('#explorer').scrollIntoView({ behavior: 'smooth' });
     } else if (d.showSpecies) {
       resetFilters();
@@ -461,18 +482,24 @@ function bindEvents() {
     } else if (t.id === 'zoom-results') {
       zoomToResults(filteredSamples());
     } else if (t.id === 'detail-close') {
-      state.selected = null;
+      closeDetail();
+    } else if (d.sort || (t.tagName === 'TH' && d.column)) {
+      const column = d.sort || d.column;
+      state.sort = { column, dir: state.sort.column === column ? -state.sort.dir : 1 };
       render();
-    } else if (t.tagName === 'TH' && d.column) {
-      state.sort = { column: d.column, dir: state.sort.column === d.column ? -state.sort.dir : 1 };
-      render();
+      $(`#sample-table th[data-column="${column}"] button`)?.focus();   // the header was redrawn
     } else if (t.tagName === 'TR' && d.id) {
-      selectSample(d.id, true);
+      selectSample(d.id, true, { row: d.id });
     }
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && state.selected) { state.selected = null; render(); }
+    if (e.key === 'Escape' && state.selected) {
+      closeDetail();
+    } else if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('#sample-table tbody tr[data-id]')) {
+      e.preventDefault();   // Space would otherwise scroll the page
+      selectSample(e.target.dataset.id, true, { row: e.target.dataset.id });
+    }
   });
 }
 

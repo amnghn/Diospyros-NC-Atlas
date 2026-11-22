@@ -61,3 +61,18 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 - Check: the smallest CIEDE2000 difference between two colours, for normal vision and for simulated protanopia, deuteranopia and tritanopia (Machado et al. 2009, full severity). Species: 22.2, 12.2, 12.5 and 10.9 (was 26.9, 6.5, 2.1 and 7.2). Soil types: 39.2, 19.9, 17.6 and 24.2 (was 17.9, 7.5, 4.8 and 7.8).
 - The simulated data were regenerated: only the `color` column of `data/species.tsv` and the colours of the placeholder drawings changed. `data/samples.tsv` and `data/files.tsv` are unchanged.
 - **Files:** `scripts/simulate_data.py`, `js/app.js`, `data/species.tsv`, `assets/photos/*.svg`, `CHANGELOG.md`.
+
+### 2026-11-22T18:19+01:00 | Accessibility and layout fixes, Leaflet pinned with Subresource Integrity
+
+#### Fixed
+- Phone screens: the page no longer scrolls sideways. At 375 px the wide sample table stretched the single layout column to 1735 px; the column is now limited to the screen width (`minmax(0, 1fr)`, as on wide screens) and the table scrolls inside its box.
+- Keyboard use of the table: each column header is now a button (sorting works with Enter and Space) and states the sort order to screen readers (`aria-sort`); after sorting, focus stays on the header. Table rows can be reached with Tab and opened with Enter or Space, and show a focus outline.
+- Detail drawer: when it opens, focus moves to its heading; when it closes (× button or Escape), focus returns to the row, map marker or button that opened it.
+- Screen-reader labels: the "all" and "none" buttons of each filter now say what they do (for example "Select all species", "Clear soil types"); each filter group is named by its title only; the column switches are a labelled group.
+- Colours from the data are escaped before they are written into the map markers.
+- The page language is British English (`lang="en-GB"`). A "Skip to the map and data" link appears at the top when it receives keyboard focus.
+
+#### Changed
+- Leaflet 1.9.4 (CSS and JavaScript from unpkg) is loaded with Subresource Integrity (`integrity`, `crossorigin`). The SHA-256 hashes were computed from the files on unpkg and agree with the hashes published by jsDelivr.
+- Checked in headless Firefox at 1440 px and 375 px: no console errors, no horizontal scrolling, and all filter, search, colour, column, sorting, drawer, species-card, base-map and export checks pass (58 checks per width). Both exports, as real downloads, are identical to the filtered data.
+- **Files:** `index.html`, `js/app.js`, `css/style.css`, `CHANGELOG.md`.
