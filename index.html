@@ -19,7 +19,7 @@
     <nav>
       <a href="#explorer">Explorer</a>
       <a href="#species">Species</a>
-      <a href="#about">About</a>
+      <a href="about.html">About</a>
       <a id="repo-link" href="#" hidden>GitHub</a>
     </nav>
   </header>
@@ -95,14 +95,6 @@
       <div id="species-cards" class="species-cards"></div>
     </section>
 
-    <section id="about" class="about">
-      <h2>About</h2>
-      <p>This site maps the <em>Diospyros</em> (Ebenaceae) samples collected in New Caledonia for a PhD project,
-        with the DNA, RNA and soil data recorded for each sample, the location and MD5 sum of every Illumina and
-        PacBio HiFi FASTQ file, and the genome assembly of each species.</p>
-      <p>The site is a static page: all data live in three tab-separated files in the <code>data/</code> folder,
-        and the code is open source.</p>
-    </section>
   </main>
 
   <aside id="detail" class="detail" aria-label="Sample details" hidden>
@@ -111,11 +103,15 @@
   </aside>
 
   <footer class="site-footer">
+    <p><strong>v<span data-site="version"></span></strong> · Beta version with simulated data, provided without warranty.
+      <a href="about.html">About this site</a></p>
     <p>Map data © OpenStreetMap contributors. Code released under the MIT licence.</p>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/version.js"></script>
+  <script src="js/site.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

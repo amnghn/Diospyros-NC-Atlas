@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Diospyros of New Caledonia</title>
+  <meta name="description" content="About the Diospyros of New Caledonia sample atlas: who made it, how to give feedback and cite it, licence, disclaimer and AI declaration. All data shown are simulated.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the content</a>
+  <header class="site-header">
+    <div class="brand">
+      <h1><em>Diospyros</em> of New Caledonia</h1>
+      <p>Sample, soil and genomic data atlas</p>
+    </div>
+    <nav>
+      <a href="./#explorer">Explorer</a>
+      <a href="./#species">Species</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a id="repo-link" href="#" hidden>GitHub</a>
+    </nav>
+  </header>
+
+  <p class="notice">
+    <strong>Simulated data.</strong> Every sample, coordinate, measurement, file path and MD5 sum on this site is
+    made up for demonstration. Species names are real; nothing else is.
+  </p>
+
+  <main id="main" class="about">
+    <section aria-labelledby="what">
+      <h2 id="what">What this is</h2>
+      <p>This website is an interactive map and data browser for a PhD project on <em>Diospyros</em> (Ebenaceae)
+        in New Caledonia. It shows every sample on a map, with its GPS coordinates and its DNA, RNA and soil data.
+        It also lists the paths and MD5 sums of the Illumina and PacBio HiFi sequencing files, one genome assembly
+        per species with its reference sample, and a photo of each species. The samples can be filtered, and the
+        filtered data can be exported as CSV or TSV files. The site is static: it reads all data from three
+        tab-separated files, and its code is open source.</p>
+    </section>
+
+    <section aria-labelledby="who">
+      <h2 id="who">Who made it</h2>
+      <p>Amin Ghane, PhD student in Ecology and Evolution at the Department of Botany and Biodiversity Research,
+        University of Vienna. Amin Ghane is a member of the
+        <a href="https://plantgenomics.univie.ac.at/index.php?id=26086&amp;L=0">Plant Ecological Genomics</a>
+        research group, led by Ovidiu Paun, who supervises this project.</p>
+      <p>ORCID: <a href="https://orcid.org/0000-0002-1035-8650">0000-0002-1035-8650</a></p>
+    </section>
+
+    <section aria-labelledby="contact">
+      <h2 id="contact">Contact</h2>
+      <p>Email: <span id="contact-email">aminghane [at] univie.ac.at</span></p>
+    </section>
+
+    <section aria-labelledby="feedback">
+      <h2 id="feedback">Feedback</h2>
+      <p>Suggestions and bug reports are welcome, by email or through
+        <a href="https://github.com/amnghn/Diospyros-NC-Atlas/issues">GitHub Issues</a>.</p>
+    </section>
+
+    <section aria-labelledby="data">
+      <h2 id="data">Data</h2>
+      <p>All data on this site are simulated for design and testing. The species names are real, but every sample,
+        coordinate, measurement, file path and MD5 sum is made up. The real data are not public. How the simulated
+        data are made, and what each column means, is described in
+        <a href="https://github.com/amnghn/Diospyros-NC-Atlas/blob/main/data/README.md">data/README.md</a>.</p>
+    </section>
+
+    <section aria-labelledby="cite">
+      <h2 id="cite">How to cite</h2>
+      <p>Please cite this site as follows. The citation metadata are in
+        <a href="https://github.com/amnghn/Diospyros-NC-Atlas/blob/main/CITATION.cff">CITATION.cff</a>.</p>
+      <p id="citation" class="citation">Ghane, A. (2026). <em>Diospyros</em> of New Caledonia: sample atlas
+        (version <span data-site="version"></span>) [website and source code].
+        <a href="https://github.com/amnghn/Diospyros-NC-Atlas">https://github.com/amnghn/Diospyros-NC-Atlas</a></p>
+    </section>
+
+    <section aria-labelledby="licence">
+      <h2 id="licence">Licence</h2>
+      <p>The whole repository, both the code and the text of the site, is released under the
+        <a href="LICENSE">MIT licence</a>. The real data and the species photographs, when they are added later,
+        will have their own terms.</p>
+    </section>
+
+    <section aria-labelledby="disclaimer">
+      <h2 id="disclaimer">Disclaimer</h2>
+      <p>This website is a beta version and a work in progress. It is provided "as is", without warranty of any
+        kind. The data shown are simulated and must not be used for research.</p>
+    </section>
+
+    <section aria-labelledby="ai">
+      <h2 id="ai">AI declaration</h2>
+      <p>This website was developed with the help of Claude Code (Anthropic), an AI coding assistant. The author
+        designed the website, wrote the instructions, reviewed the code and the text, and checked the results.
+        The prompts used to build it are available in the GitHub repository
+        (<a href="https://github.com/amnghn/Diospyros-NC-Atlas/blob/main/docs/PROMPT.md">docs/PROMPT.md</a>).
+        A record of all changes is in
+        <a href="https://github.com/amnghn/Diospyros-NC-Atlas/blob/main/CHANGELOG.md">CHANGELOG.md</a>.</p>
+    </section>
+
+    <section aria-labelledby="credits">
+      <h2 id="credits">Credits</h2>
+      <ul>
+        <li><a href="https://leafletjs.com">Leaflet</a> 1.9.4, the map library (BSD 2-Clause licence).</li>
+        <li>Street map: map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>,
+          available under the Open Database Licence (ODbL); map tiles from the OpenStreetMap Foundation, used
+          under its <a href="https://operations.osmfoundation.org/policies/tiles/">tile usage policy</a>.</li>
+        <li>Topographic map: map data © OpenStreetMap contributors, SRTM; map style ©
+          <a href="https://opentopomap.org">OpenTopoMap</a>
+          (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>).</li>
+        <li>Satellite map: Esri World Imagery. Source: Esri, Vantor, Earthstar Geographics, and the GIS User
+          Community. Used under the <a href="https://goto.arcgisonline.com/maps/World_Imagery">Esri terms of
+          use</a>.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="version">
+      <h2 id="version">Version</h2>
+      <p>Version <span data-site="version"></span>, last changed on <span data-site="date"></span>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>v<span data-site="version"></span></strong> · Beta version with simulated data, provided without warranty.
+      <a href="about.html">About this site</a></p>
+    <p>Map data © OpenStreetMap contributors. Code released under the MIT licence.</p>
+  </footer>
+
+  <script src="js/version.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

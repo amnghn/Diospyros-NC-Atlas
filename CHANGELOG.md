@@ -76,3 +76,20 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
 - Leaflet 1.9.4 (CSS and JavaScript from unpkg) is loaded with Subresource Integrity (`integrity`, `crossorigin`). The SHA-256 hashes were computed from the files on unpkg and agree with the hashes published by jsDelivr.
 - Checked in headless Firefox at 1440 px and 375 px: no console errors, no horizontal scrolling, and all filter, search, colour, column, sorting, drawer, species-card, base-map and export checks pass (58 checks per width). Both exports, as real downloads, are identical to the filtered data.
 - **Files:** `index.html`, `js/app.js`, `css/style.css`, `CHANGELOG.md`.
+
+### 2026-11-22T18:23+01:00 | About page, shared header and footer, version in one place
+
+#### Added
+- `about.html`, with the same header, navigation and footer as the map page. It contains: what the site is; who made it (Amin Ghane, Department of Botany and Biodiversity Research, University of Vienna; member of the Plant Ecological Genomics research group led by the supervisor, Ovidiu Paun; links to the group page and the ORCID record); the contact email; an invitation to send feedback by email or through GitHub Issues; the statement that all data are simulated; how to cite (with the version); the licence; the disclaimer; the AI declaration (with links to `docs/PROMPT.md` and `CHANGELOG.md`); credits for Leaflet, OpenStreetMap, OpenTopoMap and Esri World Imagery; and the version with the date of the last change.
+- The contact email is put together by JavaScript, so that the plain address is not in the HTML source; without JavaScript the page shows "aminghane [at] univie.ac.at".
+- `js/version.js`: the only place the pages read the version (`0.1.0-beta`) and the date of the last change from.
+- `js/site.js`: shared by all pages. It holds `REPO_URL` (now set to `https://github.com/amnghn/Diospyros-NC-Atlas`, which shows the GitHub link in the header), and fills in the version, the date and the email link.
+- Footer on every page: the version, a one-line disclaimer ("Beta version with simulated data, provided without warranty") and a link to the About page.
+
+#### Changed
+- The navigation links to `about.html`; on the About page, "Explorer" and "Species" link back to the map page. `REPO_URL` moved from `js/app.js` to `js/site.js`.
+- Map attribution: the topographic map now uses the attribution text requested by OpenTopoMap (map data © OpenStreetMap contributors, SRTM; map style © OpenTopoMap, CC-BY-SA), and the satellite map uses the source text published by the Esri World Imagery service ("Source: Esri, Vantor, Earthstar Geographics, and the GIS User Community") with "Powered by Esri".
+
+#### Removed
+- The short About section at the bottom of the map page. Its content moved to `about.html`.
+- **Files:** `about.html`, `index.html`, `js/app.js`, `js/site.js`, `js/version.js`, `css/style.css`, `CHANGELOG.md`.

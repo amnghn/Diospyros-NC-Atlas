@@ -163,7 +163,12 @@ dl.kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 0
 dl.kv dt { color: var(--muted); }
 dl.kv dd { margin: 0; font-variant-numeric: tabular-nums; }
 
-.about p { max-width: 75ch; }
+.about p, .about ul { max-width: 75ch; }
+.about section + section { margin-top: 22px; }
+.about h2 { margin-bottom: 6px; }
+.about ul { padding-left: 20px; }
+.about li + li { margin-top: 4px; }
+.citation { padding: 8px 12px; background: var(--surface); border-left: 3px solid var(--accent); }
 
 /* Detail drawer */
 .detail {
@@ -186,6 +191,7 @@ dl.kv dd { margin: 0; font-variant-numeric: tabular-nums; }
 .file .path, .file .md5 { font-family: var(--mono); font-size: 0.74rem; word-break: break-all; color: var(--muted); }
 
 .site-footer { padding: 18px 24px 28px; color: var(--muted); font-size: 0.85rem; }
+.site-footer p { margin: 0 0 4px; }
 .error { margin: 24px; padding: 16px; background: #fde8e4; border: 1px solid #e3a297; border-radius: var(--radius); }
 
 @media (max-width: 860px) {

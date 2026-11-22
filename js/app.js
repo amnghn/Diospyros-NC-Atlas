@@ -2,8 +2,7 @@
 
 /* ---------- Configuration ---------- */
 
-// Set this to the GitHub repository URL to show a "GitHub" link in the header.
-const REPO_URL = '';
+// The GitHub link in the header (REPO_URL), the version and the footer are set by js/site.js.
 
 const DATA_FILES = {
   species: 'data/species.tsv',
@@ -204,11 +203,15 @@ function initMap() {
   const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
+  // Attribution texts as requested by OpenTopoMap (opentopomap.org/about) and by the
+  // Esri World Imagery service (its copyrightText).
   const topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-    maxZoom: 17, attribution: 'Map data &copy; OpenStreetMap contributors, SRTM | Style &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)',
+    maxZoom: 17,
+    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
   });
   const imagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 18, attribution: 'Imagery &copy; Esri and its data providers',
+    maxZoom: 18,
+    attribution: 'Powered by <a href="https://www.esri.com">Esri</a> | Source: Esri, Vantor, Earthstar Geographics, and the GIS User Community',
   });
   L.control.layers({ 'Street map': osm, 'Topographic': topo, 'Satellite': imagery }, null, { position: 'topright' }).addTo(map);
   L.control.scale({ imperial: false }).addTo(map);
@@ -510,11 +513,6 @@ async function loadTable(url) {
 }
 
 async function main() {
-  if (REPO_URL) {
-    const link = $('#repo-link');
-    link.href = REPO_URL;
-    link.hidden = false;
-  }
   try {
     const [species, samples, files] = await Promise.all(Object.values(DATA_FILES).map(loadTable));
     state.samples = samples;
