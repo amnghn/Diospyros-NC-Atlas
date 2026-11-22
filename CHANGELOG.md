@@ -1,0 +1,30 @@
+# Changelog
+
+All notable changes to this project are recorded in this file.
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html) with a `-beta` suffix.
+Every entry has an ISO 8601 timestamp in Vienna time (`TZ=Europe/Vienna date -Iminutes`), says briefly what changed, and lists the files that changed.
+
+## [0.1.0-beta] – unreleased
+
+Version 0.1.0-beta is the first public version. The entries below are in time order. The version is tagged `v0.1.0-beta` when it is ready to publish.
+
+### 2026-11-16T21:55+01:00 | First version (laptop)
+
+The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.md` ("Prompt for version 0.1.0 (laptop)").
+
+#### Added
+- A static single-page site: a Leaflet map of New Caledonia with every sample (reference samples as stars), filters by species, soil type, province, data availability and free text, colouring by species or soil type, a sortable sample table with column groups that can be switched on and off, a detail drawer per sample, species cards with assembly statistics, and CSV/TSV export of the filtered samples and of their FASTQ paths and MD5 sums.
+- A simulated dataset (5 species, 10 samples each, 185 FASTQ files) and placeholder species drawings, written by `scripts/simulate_data.py` with a fixed seed (42).
+- **Files:** `index.html`, `css/style.css`, `js/app.js`, `data/species.tsv`, `data/samples.tsv`, `data/files.tsv`, `assets/photos/*.svg`, `scripts/simulate_data.py`, `README.md`, `LICENSE`, `.gitignore`.
+
+### 2026-11-22T18:07+01:00 | Build prompts, changelog, and rules against committing private data
+
+#### Added
+- `docs/PROMPT.md`: the prompt for this round, exactly as given, followed by the prompt that built the first version and a section for follow-up instructions.
+- `CHANGELOG.md` (this file).
+- `.gitignore`: folders and file names where real data might be placed by mistake (`private/`, `data/real/`, `data_private/`, `*.private.*`), raw sequencing and assembly files (`*.fastq.gz`, `*.bam`, `*.vcf.gz`, `*.fasta.gz` and others), local tools and previews (`.preview/`, `_site/`, `.venv-*/`, `.tools/`), and the working copy of the prompt (`PROMPT_LiSC.md`).
+
+#### Changed
+- `LICENSE`: the copyright holder is now Amin Ghane (was "Diospyros atlas contributors"). The MIT licence text is unchanged.
+- The author and committer of the first commit are now the GitHub no-reply address of the author, so that no private email address is published with the history. Dates, message and files are unchanged (new hash `60d1b40`, was `7dac168`).
+- **Files:** `docs/PROMPT.md`, `CHANGELOG.md`, `.gitignore`, `LICENSE`.

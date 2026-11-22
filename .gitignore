@@ -1,3 +1,31 @@
 .DS_Store
 __pycache__/
 .claude/
+
+# --- Real data must never enter this repository -------------------------
+# Folders and file names where real (private) data might be placed by
+# mistake. Git ignores them, so they cannot be committed. See README.md.
+private/
+data/real/
+data_private/
+*.private.tsv
+*.private.csv
+*.private.*
+# Raw sequencing and assembly files (also far too large for the repository)
+*.fastq
+*.fastq.gz
+*.fq.gz
+*.bam
+*.cram
+*.vcf.gz
+*.fasta.gz
+*.fa.gz
+
+# --- Local tools and previews (never part of the site) ------------------
+.preview/
+_site/
+.venv-*/
+.tools/
+
+# --- Working copy of the build prompt (saved in docs/PROMPT.md) ---------
+PROMPT_LiSC.md
