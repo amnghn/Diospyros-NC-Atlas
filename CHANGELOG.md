@@ -4,9 +4,9 @@ All notable changes to this project are recorded in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html) with a `-beta` suffix.
 Every entry has an ISO 8601 timestamp in Vienna time (`TZ=Europe/Vienna date -Iminutes`), says briefly what changed, and lists the files that changed.
 
-## [0.1.0-beta] – unreleased
+## [0.1.0-beta] – 2026-11-22
 
-Version 0.1.0-beta is the first public version. The entries below are in time order. The version is tagged `v0.1.0-beta` when it is ready to publish.
+Version 0.1.0-beta is the first public version, tagged `v0.1.0-beta`. The entries below are in time order.
 
 ### 2026-11-16T21:55+01:00 | First version (laptop)
 
@@ -158,4 +158,12 @@ The first commit (`60d1b40`), built on a laptop from the prompt in `docs/PROMPT.
   - `scripts/check_data.py`: passed (5 species, 50 samples, 185 files). `scripts/check_site.py`: passed (3 pages, version 0.1.0-beta). Reproducibility guard: passed. `cffconvert --validate`: valid. `actionlint`: no problems.
   - `scripts/browser_check.mjs`: all checks passed at 1440 px (100), 375 px (100) and 1024 px (95), with no console errors and no horizontal scrolling, including the 404 page at a missing address in a sub-folder. The exported CSV and TSV files were also read back with Python and agree with `data/samples.tsv` and `data/files.tsv`.
   - History: all commits have the author and committer "Amin Ghane <84973642+amnghn@users.noreply.github.com>"; no tracked file contains secrets; the only plain email address and server path are in `docs/PROMPT.md`, which is the prompt exactly as given.
+- **Files:** `CHANGELOG.md`.
+
+### 2026-11-22T18:41+01:00 | Stop point 3: ready to publish
+
+#### Changed
+- Phase 2 (no feedback at stop point 2, so no other changes): the contact email on the About page was checked again. In headless Firefox at 1440 px and 375 px, the link is exactly `mailto:aminghane@univie.ac.at` and shows "aminghane@univie.ac.at"; the plain address appears in no published file. All browser checks pass, with no console errors.
+- The history was reviewed (`git log --stat`): it contains only the site, the scripts, the documentation and the simulated data; no file larger than 273 kB; no secrets and no private email address in any commit; every commit has the author and committer "Amin Ghane <84973642+amnghn@users.noreply.github.com>".
+- Version 0.1.0-beta is dated 2026-11-22 (this file, `CITATION.cff`, `js/version.js`), and this commit is tagged `v0.1.0-beta`.
 - **Files:** `CHANGELOG.md`.
